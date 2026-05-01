@@ -2,7 +2,7 @@ import Account from "../models/Account.js";
 import axios from "axios";
 import Transaction from "../models/Transaction.js";
 import mongoose from "mongoose";
-import getNibssToken from "../util/NIBSS.js";
+import getNibssToken from "../util/nibss.js";
 
 const NIBSS_BASE_URL = process.env.NIBSS_BASE_URL;
 

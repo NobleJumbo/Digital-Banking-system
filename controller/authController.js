@@ -56,7 +56,7 @@ export const validateBvn = async (req, res) => {
             });
         }
 
-        // 🔍 Check in your database
+        // 
         const user = await User.findOne({ bvn });
 
         if (!user) {
@@ -65,7 +65,7 @@ export const validateBvn = async (req, res) => {
             });
         }
 
-        // ✅ BVN exists
+        // 
         res.status(200).json({
             message: "BVN is valid",
             data: user
