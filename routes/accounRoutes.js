@@ -10,11 +10,13 @@ const router = express.Router();
 
 import {
   createAccount,
+  transferMoney
 } from '../controller/accountController.js';
 
 
 
 router.post('/account/create', createAccount);//working
+router.post('/transfer', transferMoney);//working
 // router.get('/accounts/balance/:accountNumber', authMiddleware, getBalance);//working
 
 

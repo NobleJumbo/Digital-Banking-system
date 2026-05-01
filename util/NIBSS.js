@@ -1,6 +1,6 @@
 // TOKEN MANAGEMENT
 
-import axios from ("axios");
+import axios from "axios";
 import dotenv from "dotenv";
 dotenv.config();
 const NIBSS_BASE_URL = process.env.NIBSS_BASE_URL;
@@ -9,14 +9,12 @@ let nibssToken = null;
 let tokenExpiry = null;
 
 const getNibssToken = async () => {
-  // check if token exists and hasn't expired
+  
   if (nibssToken && tokenExpiry && Date.now() < tokenExpiry) {
     return nibssToken;
   }
 
   try {
-    // token missing or expired — fetch a fresh one
-
     const response = await axios.post(`${NIBSS_BASE_URL}/api/auth/token`, {
       apiKey: process.env.NIBSS_API_KEY,
       apiSecret: process.env.NIBSS_API_SECRET,
